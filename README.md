@@ -66,7 +66,10 @@ We use a stats-driven detection model that:
 ---
 
 ## 📈 Screenshot
+<individual anomalies are all individusally plotted>
 https://github.com/joetansey1/graphite-and-grafana-machine-learning-anomaly-detector/blob/main/anomaly_n294-primary-meraki-com_ProbeTablesAggregator_network_tag_node_tag_cmx_probe_hll_hour.png
+<all anomalies detected are plotted together>
+https://github.com/joetansey1/graphite-and-grafana-machine-learning-anomaly-detector/blob/main/screenshot.png
 
 ---
 
