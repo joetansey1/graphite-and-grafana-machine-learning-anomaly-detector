@@ -1,3 +1,29 @@
+# 1. Clone the repo
+git clone https://github.com/joetansey1/graphite-and-grafana-machine-learning-anomaly-detector
+cd graphite-and-grafana-machine-learning-anomaly-detector
+
+# 2. Create and activate virtual environment (optional)
+python -m venv venv
+source venv/bin/activate  # or .\venv\Scripts\activate on Windows
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Export your Grafana API key
+export GRAFANA_API_KEY="sk_xxx"  # or use a .env file if preferred
+
+# 5. Train the model using 6 months of CSV history
+python presence_train_model9.py
+
+# 6. Run live inference against Grafana for presence aggregators
+python live_infer18.py
+
+# 7. Enrich flagged anomalies with additional metrics
+python hydrated_anomalies6.py
+
+# 8. Visualize the detected anomalies
+python plot_it.py
+
 Presence Aggregator Anomaly Detection
 This repository implements a full-stack anomaly detection pipeline for tracking fleet-wide anomalies across production aggregator metrics — specifically focusing on the presence family of aggregators (e.g., ProbeTablesAggregator). It enables real-time detection and visualization of statistical anomalies across shards, backed by historical model training.
 
