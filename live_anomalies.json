@@ -1,0 +1,116 @@
+[
+  {
+    "machine": "n211-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-02T00:49:03.823354",
+    "severity": "high"
+  },
+  {
+    "machine": "n211-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-02T00:49:04.087044",
+    "severity": "high"
+  },
+  {
+    "machine": "n211-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-02T00:49:04.464717",
+    "severity": "high"
+  },
+  {
+    "machine": "n219-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-02T00:49:16.810773",
+    "severity": "high"
+  },
+  {
+    "machine": "n223-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-02T00:49:51.741480",
+    "severity": "high"
+  },
+  {
+    "machine": "n223-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-02T00:49:51.914393",
+    "severity": "high"
+  },
+  {
+    "machine": "n223-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-02T00:49:52.415781",
+    "severity": "high"
+  },
+  {
+    "machine": "n227-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-02T00:49:57.682854",
+    "severity": "high"
+  },
+  {
+    "machine": "n227-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-02T00:49:58.365570",
+    "severity": "high"
+  },
+  {
+    "machine": "n227-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-02T00:49:58.816376",
+    "severity": "high"
+  },
+  {
+    "machine": "n253-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-02T00:50:44.469832",
+    "severity": "high"
+  },
+  {
+    "machine": "n253-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-02T00:50:44.780193",
+    "severity": "high"
+  },
+  {
+    "machine": "n253-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-02T00:50:45.079267",
+    "severity": "high"
+  },
+  {
+    "machine": "n259-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-02T00:50:52.555049",
+    "severity": "high"
+  },
+  {
+    "machine": "n259-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-02T00:51:01.558538",
+    "severity": "high"
+  },
+  {
+    "machine": "n259-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-02T00:51:01.903962",
+    "severity": "high"
+  },
+  {
+    "machine": "n294-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-02T00:52:24.305837",
+    "severity": "high"
+  },
+  {
+    "machine": "n294-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-02T00:52:24.548759",
+    "severity": "high"
+  },
+  {
+    "machine": "n294-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-02T00:52:25.288947",
+    "severity": "high"
+  }
+]

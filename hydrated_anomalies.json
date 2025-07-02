@@ -1,0 +1,227 @@
+[
+  {
+    "machine": "n211-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:14:05.749118",
+    "severity": "high",
+    "max_value": 0.10530361,
+    "avg_value": 0.09986388900000001,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n211-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-01T21:14:05.926413",
+    "severity": "high",
+    "max_value": 0.10112555,
+    "avg_value": 0.09579527683333332,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n211-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:14:06.371227",
+    "severity": "high",
+    "max_value": 0.102605,
+    "avg_value": 0.09756074,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n213-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:14:09.979463",
+    "severity": "high",
+    "max_value": 0.32933307,
+    "avg_value": 0.08764954016666666,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n219-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-01T21:14:23.796227",
+    "severity": "high",
+    "max_value": 0.13839084,
+    "avg_value": 0.13492764,
+    "valid_pct": 0.034
+  },
+  {
+    "machine": "n223-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:14:58.757736",
+    "severity": "high",
+    "max_value": 0.09691278,
+    "avg_value": 0.09561764083333334,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n223-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-01T21:14:58.900605",
+    "severity": "high",
+    "max_value": 0.08663444,
+    "avg_value": 0.084895741,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n223-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:14:59.291688",
+    "severity": "high",
+    "max_value": 0.091885835,
+    "avg_value": 0.09041541483333333,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n227-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:15:06.298555",
+    "severity": "high",
+    "max_value": 0.08294417,
+    "avg_value": 0.08130416800000001,
+    "valid_pct": 0.072
+  },
+  {
+    "machine": "n227-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-01T21:15:06.641331",
+    "severity": "high",
+    "max_value": 0.07862166,
+    "avg_value": 0.07594268233333333,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n227-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:15:07.111743",
+    "severity": "high",
+    "max_value": 0.081203885,
+    "avg_value": 0.07938495416666667,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n236-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:15:46.062532",
+    "severity": "high",
+    "max_value": 0.20797834,
+    "avg_value": 0.0933338358,
+    "valid_pct": 0.072
+  },
+  {
+    "machine": "n236-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-01T21:15:46.479986",
+    "severity": "high",
+    "max_value": 0.20012194,
+    "avg_value": 0.07051759249999999,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n236-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:15:47.197853",
+    "severity": "high",
+    "max_value": 0.20477694,
+    "avg_value": 0.0859136674,
+    "valid_pct": 0.072
+  },
+  {
+    "machine": "n253-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:16:47.688952",
+    "severity": "high",
+    "max_value": 0.069890834,
+    "avg_value": 0.0648781485,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n253-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-01T21:16:47.982643",
+    "severity": "high",
+    "max_value": 0.06742889,
+    "avg_value": 0.062140480172413796,
+    "valid_pct": 0.084
+  },
+  {
+    "machine": "n253-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:16:48.362918",
+    "severity": "high",
+    "max_value": 0.06844194,
+    "avg_value": 0.0633201835,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n255-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:16:50.327395",
+    "severity": "high",
+    "max_value": 0.101145834,
+    "avg_value": 0.06282893566666667,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n255-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:16:50.934021",
+    "severity": "high",
+    "max_value": 0.099080555,
+    "avg_value": 0.06001981383333333,
+    "valid_pct": 0.086
+  },
+  {
+    "machine": "n259-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:17:25.782100",
+    "severity": "high",
+    "max_value": 0.10256083,
+    "avg_value": 0.09057342333333333,
+    "valid_pct": 0.087
+  },
+  {
+    "machine": "n259-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-01T21:17:26.380058",
+    "severity": "high",
+    "max_value": 0.100414164,
+    "avg_value": 0.08820467566666666,
+    "valid_pct": 0.087
+  },
+  {
+    "machine": "n259-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:17:27.316375",
+    "severity": "high",
+    "max_value": 0.10121583,
+    "avg_value": 0.08908601816666667,
+    "valid_pct": 0.087
+  },
+  {
+    "machine": "n294-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:18:26.779478",
+    "severity": "high",
+    "max_value": 0.101985276,
+    "avg_value": 0.09914875050000001,
+    "valid_pct": 0.029
+  },
+  {
+    "machine": "n294-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.network_tag_node_tag_cmx_probe_hll_hour",
+    "timestamp": "2025-07-01T21:18:27.023055",
+    "severity": "high",
+    "max_value": 0.098771945,
+    "avg_value": 0.0957636125,
+    "valid_pct": 0.029
+  },
+  {
+    "machine": "n294-primary-meraki-com",
+    "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+    "timestamp": "2025-07-01T21:18:27.553513",
+    "severity": "high",
+    "max_value": 0.099869445,
+    "avg_value": 0.0968852775,
+    "valid_pct": 0.029
+  }
+]
