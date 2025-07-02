@@ -24,6 +24,21 @@ python hydrated_anomalies6.py
 # 8. Visualize the detected anomalies
 python plot_it.py
 
+### 📦 Output Format
+
+Each anomaly includes:
+- `machine`: which shard triggered the anomaly
+- `aggregator`: the affected presence table
+- `timestamp`: when it occurred
+- `severity`: based on model prediction confidence
+- `max_value`, `avg_value`, `valid_pct`: simple metrics for anomaly explainability
+
+ML Model Details
+
+Feature window: 24-point sliding window over 6 months of historical presence data
+Training size: ~8 million samples
+Model type: IsolationForest 
+
 Presence Aggregator Anomaly Detection
 This repository implements a full-stack anomaly detection pipeline for tracking fleet-wide anomalies across production aggregator metrics — specifically focusing on the presence family of aggregators (e.g., ProbeTablesAggregator). It enables real-time detection and visualization of statistical anomalies across shards, backed by historical model training.
 
