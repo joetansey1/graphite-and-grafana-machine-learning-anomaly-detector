@@ -1,6 +1,6 @@
 # 📊 Graphite & Grafana ML Anomaly Detector
 
-This project uses real-time metrics from a Grafana-Graphite backend to detect anomalies using a trained ML model. It helps identify backend misbehavior (latency spikes, aggregator stalls, etc.) that aren't easily caught by traditional alerting.
+This project uses real-time metrics from a Grafana-Graphite backend to detect anomalies using a trained ML model. It helps identify backend misbehavior (latency spikes, aggregator stalls, etc.) that aren't easily caught by traditional alerting thresholds.
 
 ---
 
