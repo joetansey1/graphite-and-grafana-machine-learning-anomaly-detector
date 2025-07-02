@@ -1,134 +1,86 @@
-# 1. Clone the repo
-git clone https://github.com/joetansey1/graphite-and-grafana-machine-learning-anomaly-detector
+# 📊 Graphite & Grafana ML Anomaly Detector
+
+This project uses real-time metrics from a Grafana-Graphite backend to detect anomalies using a trained ML model. It helps identify backend misbehavior (latency spikes, aggregator stalls, etc.) that aren't easily caught by traditional alerting.
+
+---
+
+## 🔧 Scripts Overview
+
+* **`presence_train_model9.py`**:
+  Loads and merges 6 months of historical `presence` data from CSVs and trains a consolidated ML anomaly detection model.
+
+* **`live_infer18.py`**:
+  Uses the trained model to identify anomalies in real-time from Grafana (via API), focusing on the `presence` aggregator family.
+
+* **`hydrated_anomalies6.py`**:
+  Enriches each anomaly by pulling the 24-hour time window around it and calculating useful summary stats: `max_value`, `avg_value`, and `valid_pct` (valid data coverage).
+
+* **`plot_it.py`**:
+  Plots all hydrated anomalies with shard ID, aggregator, max value, and timestamp for easy visual inspection and demo.
+
+---
+
+## 🚀 Quickstart
+
+```bash
+git clone https://github.com/joetansey1/graphite-and-grafana-machine-learning-anomaly-detector.git
 cd graphite-and-grafana-machine-learning-anomaly-detector
-
-# 2. Create and activate virtual environment (optional)
-python -m venv venv
-source venv/bin/activate  # or .\venv\Scripts\activate on Windows
-
-# 3. Install dependencies
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 
-# 4. Export your Grafana API key
-export GRAFANA_API_KEY="sk_xxx"  # or use a .env file if preferred
+python presence_train_model9.py     # Train model from 6 CSVs
+python live_infer18.py              # Run detection using Grafana API
+python hydrated_anomalies6.py       # Pull context data for anomalies
+python plot_it.py                   # Generate demo plot with annotations
+```
 
-# 5. Train the model using 6 months of CSV history
-python presence_train_model9.py
+---
 
-# 6. Run live inference against Grafana for presence aggregators
-python live_infer18.py
+## 🧠 How the Anomaly Detection Works
 
-# 7. Enrich flagged anomalies with additional metrics
-python hydrated_anomalies6.py
+We pulled 6 months of data for each sub-aggregator in the `presence` family into individual CSVs.
+Each CSV had the same shape: a timestamp and an `agg_length_behind_ratio` value.
 
-# 8. Visualize the detected anomalies
-python plot_it.py
+Upon inspection, we noticed that all aggregators had similar statistical behavior (distribution shape, periodicity), so we merged them into one unified dataset to train a single model.
 
-### 📦 Output Format
+We use a stats-driven detection model that:
 
-Each anomaly includes:
-- `machine`: which shard triggered the anomaly
-- `aggregator`: the affected presence table
-- `timestamp`: when it occurred
-- `severity`: based on model prediction confidence
-- `max_value`, `avg_value`, `valid_pct`: simple metrics for anomaly explainability
+* Computes rolling windows and lag metrics
+* Learns normal `agg_length_behind_ratio` ranges
+* Flags anomalies that deviate sharply at `24h` or `72h` lags
+* Produces anomaly records like:
 
-ML Model Details
+```json
+{
+  "machine": "n211-primary-meraki-com",
+  "aggregator": "ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc",
+  "timestamp": "2025-07-01T21:14:05.749118",
+  "severity": "high",
+  "max_value": 0.099,
+  "avg_value": 0.096,
+  "valid_pct": 0.029
+}
+```
 
-Feature window: 24-point sliding window over 6 months of historical presence data
-Training size: ~8 million samples
-Model type: IsolationForest 
+---
 
-Presence Aggregator Anomaly Detection
-This repository implements a full-stack anomaly detection pipeline for tracking fleet-wide anomalies across production aggregator metrics — specifically focusing on the presence family of aggregators (e.g., ProbeTablesAggregator). It enables real-time detection and visualization of statistical anomalies across shards, backed by historical model training.
+## 📈 Screenshot
 
-Project Purpose
-Modern distributed systems generate an immense volume of telemetry across hundreds of aggregators. This project identifies anomalies in backend presence aggregators that may indicate stalled processing, failing jobs, or unhealthy shards.
+![Anomaly Plot](https://private-user-images.githubusercontent.com/70726791/461366455-5a0c64e1-e1b9-404e-864e-1ec5e9bcfd30.png)
 
-By modeling historical data and applying statistical deviation checks at inference time, we can proactively highlight aggregators with outlier behavior — and eventually notify engineering teams via Slack or other channels.
+---
 
-Repository Contents
-File	Purpose
-presence_train_model9.py	Trains an ML model on 6 months of presence aggregator data from multiple shards
-live_infer18.py	Runs live anomaly detection on recent Grafana API data using the trained model
-hydrated_anomalies6.py	Enriches raw anomalies with metadata (machine name, aggregator, timestamp, etc.)
-plot_it.py	Visualizes anomalies with labeled plots by shard and aggregator
+## 🛠️ Future Extensions
 
-Training: How It Works
-The anomaly model was trained using 6 CSVs representing 6 months of agg_length_behind_ratio metrics for individual presence aggregators. These CSVs were:
+* Slack integration for pushing anomaly alerts to ops channels
+* Per-shard anomaly summary & trend reports
+* Fleet-wide meta-anomaly detection
+* Switch between strict (p99) vs. permissive (p95) detection thresholds
+* Fine-tune duration and shape-based heuristics
 
-Exported from Grafana dashboards using aliasByNode queries
+---
 
-Covered metrics like:
+## 📄 License
 
-ProbeTablesAggregator.network_tag_node_tag_cmx_probe_counts_by_ssid_hour_utc
-
-ProbeTablesAggregator.node_tag_cmx_probe_counts_by_ssid_hour_utc
-
-and similar variants
-
-✅ Consolidation Strategy
-Initially, models were considered per-aggregator. But after inspecting value distributions, shapes, and temporal variance, it became clear the presence family shared similar statistical properties (e.g., low variance, rare spikes, high sparsity). We merged all CSVs into a unified training set.
-
-This enabled:
-
-Better generalization
-
-A single model to infer across all presence aggregators
-
-Consistent detection across shards
-
-🧮 Anomaly Detection Logic
-The pipeline evaluates agg_length_behind_ratio time series for each shard+aggregator.
-
-Under the Hood
-Training:
-
-All data points are standardized (z-score)
-
-Statistical properties (mean, stddev, percentiles) are computed
-
-A model is persisted to presence_model.pkl
-
-Inference:
-
-Grafana API fetches the most recent time series
-
-Model evaluates each point:
-
-Values exceeding p95–p99 thresholds or violating fixed absolute cutoffs (e.g., > 0.05) are flagged
-
-Anomalies are enriched and logged
-
-Hydration:
-
-Anomalies are joined with metadata (e.g., aggregator name, timestamp, shard)
-
-Output saved to hydrated_anomalies.json
-
-Plotting:
-
-plot_it.py generates time series visualizations, highlighting anomaly points with labels and coloring
-
-🔧 Tuning Sensitivity
-You can adjust anomaly sensitivity by modifying:
-
-Percentile threshold: p95, p99, p99.9 (default is p99)
-
-Static threshold: Set a lower or higher max_value cutoff (e.g., 0.02 → noisy, 0.1 → stricter)
-
-Valid datapoint ratio: Skip time series that are too sparse (e.g., valid_pct < 0.05)
-
-These can be tuned in the live_infer*.py or hydrated_anomalies*.py scripts.
-
-🧩 Future Work
- Slack integration for alerting high-severity anomalies
-
- Web dashboard for anomaly browsing
-
- Auto-tagging or clustering related anomaly spikes
-
- Extend detection to other aggregator families (e.g., client, connectivity)
-
- Fine-tune detection models per aggregator type
-
+MIT (add `LICENSE` file if needed)
