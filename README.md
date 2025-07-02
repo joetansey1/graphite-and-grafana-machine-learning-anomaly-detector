@@ -66,8 +66,7 @@ We use a stats-driven detection model that:
 ---
 
 ## 📈 Screenshot
-
-![Anomaly Plot](https://private-user-images.githubusercontent.com/70726791/461366455-5a0c64e1-e1b9-404e-864e-1ec5e9bcfd30.png)
+https://github.com/joetansey1/graphite-and-grafana-machine-learning-anomaly-detector/blob/main/anomaly_n294-primary-meraki-com_ProbeTablesAggregator_network_tag_node_tag_cmx_probe_hll_hour.png?raw=true
 
 ---
 
