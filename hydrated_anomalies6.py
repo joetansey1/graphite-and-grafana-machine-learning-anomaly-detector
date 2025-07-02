@@ -2,7 +2,7 @@ import json
 import requests
 from datetime import datetime, timedelta
 
-GRAFANA_API_KEY = "glsa_hYvQoecRx0A77hJzefplRDARsBojB4eW_c6b61312"
+GRAFANA_API_KEY = "API TOKEN"
 GRAFANA_GRAPHITE_URL = "https://grafana.ikarem.io/api/datasources/proxy/uid/000000010/render"
 HEADERS = { "Authorization": f"Bearer {GRAFANA_API_KEY}" }
 
